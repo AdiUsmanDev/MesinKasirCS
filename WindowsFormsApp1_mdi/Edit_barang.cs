@@ -74,6 +74,13 @@ namespace WindowsFormsApp1_mdi
                         MessageBox.Show("Data berhasil di ubah");
                         this.Close();
                         view_barang view = new view_barang();
+
+                         Form oldform = Application.OpenForms.OfType<view_barang>().FirstOrDefault();
+                        if (oldform != null)
+                        {
+                            oldform.Hide();
+                        }
+                        
                         view.Show();
                         view.Refresh();
                     }
