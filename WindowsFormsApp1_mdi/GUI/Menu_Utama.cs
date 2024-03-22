@@ -165,8 +165,31 @@ namespace WindowsFormsApp1_mdi
 
         }
 
+void pencarian_FormClosed(object sender, FormClosedEventArgs e)
+{
+    pencarian = null;
 
-      
+
+}
+
+private void pencarian_brg(object sender, EventArgs e)
+{
+
+    if (pencarian  == null)
+    {
+
+        pencarian = new Pencarian();
+        pencarian.MdiParent = this;
+        pencarian.FormClosed += new FormClosedEventHandler(pencarian_FormClosed);
+        pencarian.Show();
+    }
+    else
+    {
+        pencarian.Activate();
+    }
+
+}
+
 
 
         private void ShowNewForm(object sender, EventArgs e)
