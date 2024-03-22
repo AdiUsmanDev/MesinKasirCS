@@ -48,7 +48,12 @@ namespace WindowsFormsApp1_mdi
             }
         }
 
+         private void close(object sender,FormClosedEventArgs e)
+         {
+             Application.Exit();
+         }
 
+        
         private void logout(object sender , EventArgs e)
         {
             DialogResult result = MessageBox.Show("Apakah Anda yakin ingin Logout?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
