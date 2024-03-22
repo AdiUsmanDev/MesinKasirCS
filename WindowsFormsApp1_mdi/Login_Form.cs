@@ -153,6 +153,13 @@ namespace WindowsFormsApp1_mdi
 
                                 Login_Form login_Form = new Login_Form();
                                 var menu = new Menu_Utama(login_Form);
+
+                                 Form oldform = Application.OpenForms.OfType<Menu_Utama>().FirstOrDefault();
+                                    if (oldform != null)
+                                    {
+                                        oldform.Hide();
+                                    }  
+                                                                    
                                 menu.Show();
 
                             }
